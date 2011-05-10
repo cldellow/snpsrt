@@ -1,3 +1,4 @@
+#!/usr/bin/python
 """
 A driver for the snapsort coding challenge.
 
@@ -5,10 +6,15 @@ Given a set of listings and products as defined at http://blog.snapsort.com/codi
 of results mapping products to their listings.
 """
 from __future__ import with_statement
-import json as simplejson
 import string
 import sys
 import time
+
+try:
+  import json as simplejson
+except ImportError:
+  print "json module not found; please run under at least Python 2.6"
+  sys.exit()
 
 try:
   import multiprocessing
